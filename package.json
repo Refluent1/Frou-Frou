@@ -1,0 +1,14 @@
+{
+  "name": "frou-frou",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/js/script.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "Rashid Alzarooni",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
