@@ -23,14 +23,13 @@
     <title>Orders</title>
   </head>
   <body>
-
     <!--NAVIGATION BAR-->
     <div class="nav-bar">
       <img src="src/images/logo.png" href="/" />
       <a class="nav" href="/">Home</a>
       <a class="nav" href="#">Orders</a>
       <a class="nav" href="database">Database</a>
-      <div class='wrapper'>
+      <div class="wrapper">
         <div class="icon nav-icon">
           <span></span>
           <span></span>
@@ -42,26 +41,33 @@
           <span></span>
           <span></span>
         </div>
-    
       </div>
     </div>
-
-    
-    
 
     <!--ORDERS-->
 
     <!-- Search System -->
     <div class="search-wrapper">
-      <input type="search" id="search" placeholder="Search Orders" data-search>
+      <input
+        type="search"
+        id="search"
+        placeholder="Search Orders"
+        data-search
+      />
     </div>
 
     <div class="card-container" data-user-cards-container>
-  
       <template class="card-container" data-user-template>
         <div class="card">
           <div class="header" data-header></div>
           <div class="body" data-body></div>
+          <img
+            src="https://iili.io/yI8clt.md.png"
+            alt="Status of Order"
+            id="statusImg"
+            title="Not Started"
+            data-status
+          />
           <div class="dropdown" data-size>
             <select class="size-drop">
               <option value="s">Small</option>
@@ -70,14 +76,9 @@
             </select>
           </div>
         </div>
-        <div>
-          
-        </div>
+        <div></div>
       </template>
     </div>
-
-      
-
 
     <template class="past">
       <div></div>
@@ -87,18 +88,10 @@
       <h1>Leanne Graham</h1>
       <h1>010-692-6593 x09125</h1>
       <h1>1bjshbfha6BH6g8531h</h1>
-      
-      
-      
-      <img src="https://iili.io/yI8clt.md.png" alt="Status of Order" id="statusImg" title="Not Started">
     </div>
-
-  
 
     <!-- <div class="past1">
       <h1 class="past">Past Orders</h1>
     </div> -->
-
-    
   </body>
 </html>

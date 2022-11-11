@@ -2,8 +2,11 @@ const userCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-user-cards-container]");
 const searchInput = document.querySelector("[data-search]");
 const icon = document.querySelector('.icon');
-const image = document.getElementById(`statusImg`)
 import data from "../../db.json" assert { type: "json" };
+console.log(data)
+// import { readDb, writeDb } from "../database/dbFunctions";
+let imageDb;
+
 
 
   icon.addEventListener('click', (event) => {
@@ -27,12 +30,7 @@ users = data.map((user) => {
   const card = userCardTemplate.content.cloneNode(true).children[0];
   const header = card.querySelector("[data-header]");
   const body = card.querySelector("[data-body]");
-  header.textContent = user.name;
-  body.textContent = user.email;
-  userCardContainer.append(card);
-  return { name: user.name, email: user.email, element: card };
-});
-
+  const image = card.querySelector(`[data-status]`)
 
 //Status Image: If red, make yellow, if yellow make green
 image.addEventListener('click', (event) => {
@@ -40,11 +38,13 @@ image.addEventListener('click', (event) => {
     case "https://iili.io/yI8clt.md.png":
     image.src = "https://iili.io/yI87iN.md.png"
     image.title = "Starting..."
+    imageDb = "https://iili.io/yI87iN.md.png"
     break;
     
     case "https://iili.io/yI87iN.md.png":
     image.src = "https://iili.io/yI8afI.md.png"
     image.title = "Finished!"
+    imageDb = "https://iili.io/yI8afI.md.png"
     break;
 
     case "https://iili.io/yI8afI.md.png":
@@ -55,46 +55,18 @@ image.addEventListener('click', (event) => {
     default:
     break;
     }
-});
+}).then(() => {
+  writeDb(imageDb)
+})
+
+  header.textContent = user.name;
+  body.textContent = user.email;
+  userCardContainer.append(card);
+  return { name: user.name, email: user.email, element: card };
+})
 
 
 
-
-
-
-
-
-
-
-
-
-
-//   fetch("https://jsonplaceholder.typicode.com/users")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     //If no user is found, will clone a div
-//     // if (data.length == 0) {
-//     //   const card = noneTemplate.content.cloneNode(true).children[0];
-//     //   const header = card.querySelector("[data-user-noTemp-h1]");
-
-//     //   header.textContent = `No results were found!`;
-//     //   userCardContainer.append(card);
-//     // } else {
-//       users = data.map((user) => {
-//         const card = userCardTemplate.content.cloneNode(true).children[0];
-//         const header = card.querySelector("[data-header]");
-//         const body = card.querySelector("[data-body]");
-//         header.textContent = user.name;
-//         body.textContent = user.email;
-//          userCardContainer.append(card);
-//         // userCardContainer.append(active1);
-//         return { name: user.name, email: user.email, element: card };
-//       });
-//     // }
-//   });
-
-// const readDb = require(`../database/dbFunctions`);
-// const writeDb = require(`../database/dbFunctions`);
 
 // let i;
 // const keys = Object.keys(readDb);
