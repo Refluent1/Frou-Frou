@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Page Not Found!</title>
+  </head>
+  <body>
+    <style>
+      *::selection {
+        background-color: rgb(254, 217, 217, 0.5);
+      }
+
+      :root {
+        --lighter-colour: rgb(254, 226, 226);
+        --light-colour: rgb(254, 217, 217);
+        --dark-colour: rgb(199, 169, 169);
+        --darker-colour: rgb(179, 154, 154);
+      }
+
+      body {
+        background: url('/src/images/background-404.svg') no-repeat center fixed;
+        background-size: cover;
+      }
+
+
+      h1,
+      p {
+        font-family: "Raleway", sans-serif;
+        text-align: center;
+        background: -webkit-linear-gradient(
+          left,
+          #dfbebe,
+          var(--darker-colour)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      h1 {
+        font-size: 33vh;
+        font-weight: 700;
+        margin-bottom: 3vh;
+        background: -webkit-linear-gradient(
+          left,
+          var(--lighter-colour),
+          var(--light-colour)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      a {
+        text-decoration: none;
+        border-radius: 20px;
+        color: var(--darker-colour);
+        padding: 1em;
+        width: fit-content;
+        margin: 0;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, #dfbebe 0%, #fee2e2 50%);
+      }
+
+      a:hover {
+        background: linear-gradient(90deg, #dfbebe 0%, #fee2e2 50%);
+      }
+
+      /* IPHONE 12 PRO MAX*/
+      @media screen and (max-width: 926px) {
+        h1 {
+          font-size: 24vh;
+        }
+
+        a {
+          position: absolute;
+          top: 55%;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        h1 {
+          font-size: 33vh;
+        }
+
+        p {
+          font-size: 3vh;
+        }
+
+        a {
+          position: absolute;
+          top: 75%;
+        }
+      }
+
+      /* svg {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120vw;
+        height: 100vh;
+      } */
+    </style>
+
+    <div class="not-found">
+      <h1>404</h1>
+      <p>Sorry, but the page you were trying to view does not exist.</p>
+      <a href="/">GO BACK HOME</a>
+    </div>
+
+
+  </body>
+</html>
